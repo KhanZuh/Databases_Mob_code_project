@@ -1,51 +1,46 @@
-```sql
--- Databse schema
 
--- From user stoires - two main entites 
--- Items (shop inventory)
--- Orders (customer purchases)
+# Extract nouns from the user stories or specification
 
--- Analyze the relationships
--- Can one ITEM have many ORDERS? → Yes (same item can be ordered multiple times)
--- Can one ORDER have many ITEMS? → ? --> "I want to assign each order to their corresponding item" - this suggests each order is for ONE specific item. --> So this is a One-to-Many relationship: One Item → Many Orders
+As a shop manager
+So I can know which items I have in stock
+I want to keep a list of my shop items with their name and unit price.
 
--- Attributes
--- From user stories
+As a shop manager
+So I can know which items I have in stock
+I want to know which quantity (a number) I have for each item.
 
--- Items: 
--- name (string)
--- unit_price (number)
--- quantity (number - stock level)
+As a shop manager
+So I can manage items
+I want to be able to create a new item.
 
--- Orders:
--- customer_name (string)
--- order_date (date)
--- item_id (foreign key to items table)
+As a shop manager
+So I can know which orders were made
+I want to keep a list of orders with their customer name.
 
--- Design decisions
--- Data types:
--- unit_price: INTEGER to store price in pence/cents 
--- quantity: INTEGER (whole numbers of items)
--- order_date: DATE type
--- names: TEXT/VARCHAR
+As a shop manager
+So I can know which orders were made
+I want to assign each order to their corresponding item.
 
--- Sample Data Thinking:
--- Items: vacuum cleaner, coffee machine, etc.
--- Orders: different customers buying these items on different dates
-```
+As a shop manager
+So I can know which orders were made
+I want to know on which date an order was placed.
 
+As a shop manager
+So I can manage orders
+I want to be able to create a new order.
 
 ```
-┌─────────────────┐         ┌─────────────────┐
-│     ITEMS       │         │     ORDERS      │
-├─────────────────┤         ├─────────────────┤
-│ id (PK)         │◄────────┤ id (PK)         │
-│ name            │    │    │ customer_name   │
-│ unit_price      │    │    │ order_date      │
-│ quantity        │    │    │ item_id (FK)    │
-└─────────────────┘    │    └─────────────────┘
-                       │
-                    One-to-Many
-                 (One item can have 
-                  many orders)
+Nouns:
+items, name, unit price, quantity, orders, customer name, date
 ```
+# Infer the Table Name and Columns
+
+| Record                | Properties          |
+| --------------------- | ------------------  |
+| items                 | name, unit_price, quantity
+| orders                | customer_name, date
+
+Table: items
+
+
+Table: orders
