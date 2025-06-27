@@ -33,5 +33,5 @@ class ItemRepository:
     
     
     def create(self, item):
-        return self.connection.execute("INSERT INTO items (name, unit_price, quantity) VALUES (%s, %s, %s) RETURN id", (item.name, item.unit_price, item.quantity))
+        self.connection.execute("INSERT INTO items (name, unit_price, quantity) VALUES (%s, %s, %s)", (item.name, item.unit_price, item.quantity))
         
