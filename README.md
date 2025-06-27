@@ -138,5 +138,4 @@ Tests cover:
 
 ## Sample Data
 The system comes pre-loaded with 10 pet shop items and 10 customer orders, demonstrating the relationships between products and purchases in a typical pet store scenario.
-RetryClaude can make mistakes. Please double-check responses.
 
