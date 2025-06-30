@@ -56,7 +56,7 @@ def create_order(order_name, order_date):
     order_repository.create(order)
 
 def list_items_for_order(order_id):
-    items = item_repository.find_by_item(order_id)
+    items = item_repository.find_by_order(order_id)
     print(f"Items in order #{order_id}:")
     for item in items:
         print(f" - {item.name} (Unit price: {item.unit_price}, Quantity: {item.quantity})")

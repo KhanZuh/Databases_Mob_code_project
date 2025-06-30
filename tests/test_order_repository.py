@@ -4,7 +4,7 @@ from datetime import datetime, date
 """
 Test all returns all items
 """
-def test_all_returns_all_items(db_connection):
+def test_all_returns_all_orders(db_connection):
     db_connection.connect()
     db_connection.seed("seeds/shop_manager.sql")
 

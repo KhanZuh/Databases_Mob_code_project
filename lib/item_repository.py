@@ -17,7 +17,7 @@ class ItemRepository:
         rows = self.connection.execute("SELECT * FROM items WHERE id = %s", (item_id,))
         return [Item(rows[0]["id"], rows[0]["name"], rows[0]["unit_price"], rows[0]["quantity"])]
     
-    def find_by_item(self, order_id):
+    def find_by_order(self, order_id):
         rows = self.connection.execute("""
                                         SELECT items.id AS item_id, items.name, items.unit_price, items.quantity
                                         FROM items
